@@ -26,13 +26,14 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarToggle">
-              <div class="navbar-nav mr-auto">
-                <a class="nav-item nav-link" href="{% url 'announcements-home' %}">Announcements</a>
-                <a class="nav-item nav-link" href="{% url 'announcements-about' %}">Reminders</a>
-              </div>
               <!-- Navbar Right Side -->
               <div class="navbar-nav">
                 {% if user.is_authenticated %}
+                <div class="navbar-nav mr-auto" style="margin-right: 200px;">
+                  <a class="nav-item nav-link" href="{% url 'announcements-home' %}">Announcements</a>
+                  <a class="nav-item nav-link" href="{% url 'announcements-about' %}">Reminders</a>
+                </div>
+                  <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
                   <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                   <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                 {% else %}
