@@ -35,4 +35,7 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
         return super().form_valid(form)
 
 def about(request):
-    return render(request, 'announcements/about.html', {'title':'hello'})
+    context = {
+        'posts' : Post.objects.all()
+    }
+    return render(request, 'announcements/about.html',context)
